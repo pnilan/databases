@@ -17,6 +17,7 @@ CREATE TABLE messages (
   content TEXT NOT NULL,
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
   user_id INTEGER NOT NULL,
+  roomname VARCHAR(20) DEFAULT 'Lobby',
   FOREIGN KEY (user_id) REFERENCES users (id)
 );
 
