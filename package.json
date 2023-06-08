@@ -9,7 +9,7 @@
     "node": ">=4.0.0"
   },
   "scripts": {
-    "start": "node ./server/app.js",
+    "start": "nodemon ./server/app.js",
     "start:es6": "npx babel-node ./server/app.js",
     "test": "jest",
     "lint": "eslint ./"
@@ -20,6 +20,7 @@
     "express": "4.17.1",
     "morgan": "^1.10.0",
     "mysql2": "^2.2.5",
+    "nodemon": "^2.0.22",
     "sequelize": "^6.3.5"
   },
   "devDependencies": {
