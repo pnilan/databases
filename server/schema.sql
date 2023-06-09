@@ -12,15 +12,19 @@ CREATE TABLE users (
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP()
 );
 
-CREATE TABLE messages (
+CREATE TABLE rooms (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
-  content TEXT NOT NULL,
-  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
-  user_id INTEGER NOT NULL,
-  roomname VARCHAR(20) DEFAULT 'Lobby',
-  FOREIGN KEY (user_id) REFERENCES users (id)
+  roomname VARCHAR(20) DEFAULT 'Lobby'
 );
 
+CREATE TABLE messages (
+  id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  content TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP(),
+  roomname VARCHAR(20) DEFAULT 'Lobby',
+  user_id INTEGER,
+  FOREIGN KEY (user_id) REFERENCES users (id)
+);
 
 /*  Execute this file from the command line by typing:
  *    mysql -u root < server/schema.sql
